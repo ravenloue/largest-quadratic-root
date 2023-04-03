@@ -3,19 +3,81 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Default Webpage Title</title>
-        <link href=".dist/style.css" rel="stylesheet" />
-        <script src="app.js" defer=""></script>
+        <title>Quadratic Roots</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+              rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+              crossorigin="anonymous">
+        <script type="module" src="./public/app.js" defer=""></script>
     </head>
-    <body>
+    <body class="bg-secondary">
         <!-- Nav Bar -->
         <header>
-
+            <nav class="navbar navbar-expand-md navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <!--
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Other Projects
+                        </a>
+                        
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                        -->
+                    </div>
+                  </div>
+            </nav>
         </header>
 
         <!-- Body Content -->
-        <main>
+        <main class="mt-5">
+            <article class="container-sm bg-transparent border-0 card w-75" style="min-width: 360px">
+                <section class="card-header bg-light rounded border border-2 border-dark p-1">
+                    <h2>Quadratic Roots</h2>
+                </section>
+                <section class="card-body bg-primary rounded border border-2 border-dark p-3">
+                    <h4>Roots of a Quadratic Equation</h4>
+                    <p class="bg-light rounded p-2">The <strong>roots of a quadratic equation</strong> are the values of the variable, <em>x</em>,
+                       that satisfy the equation: A<em>x</em>² + B<em>x</em> + C = 0 .<br/>
+                       They are also referred to as the <em>"solutions"</em> or <em>"zeros"</em> of the quadratic equation.
+                       <br/><br/>
+                       By applying the quadratic formula, we can take the coefficients and find not only the roots,
+                       but their product and sum as well. 
+                    </p>
+                </section>
+                <section class="card-footer bg-primary fs-3 rounded border border-2 border-dark p-4">
+                    <div class="input-group pt-2 pb-4">
+                        <input id="a" type="number" class="form-control" aria-label="First Coefficient" placeholder="A">
+                        <span class="input-group-text bg-light bg-gradient">x² +</span>
+                        <input id="b" type="number" class="form-control" aria-label="Second Coefficient" placeholder="B">
+                        <span class="input-group-text bg-light bg-gradient"> x + </span>
+                        <input id="c" type="number" class="form-control" aria-label="Third Coefficient" placeholder="C">
+                        <span class="input-group-text bg-light">= 0 </span>
+                    </div>
+                    <div class="btn-group pb-2" role="group" aria-label="Button group" >
+                        <button id="large" type="button" class="btn btn-secondary border btn-sm">Larger Root</button>
+                        <button id="small" type="button" class="btn btn-secondary border btn-sm">Smaller Root</button>
+                        <button id="both" type="button" class="btn btn-secondary border btn-sm">Both Roots</button>
+                        <button id="product" type="button" class="btn btn-secondary border btn-sm">Product of Roots</button>
+                        <button id="sum" type="button" class="btn btn-secondary border btn-sm">Sum of Roots</button>
+                    </div>
+                </section>
+                <section class="card rounded border border-2 border-dark visually-hidden" id="Results">
+                    <div class="card card-header"> <h4>Results</h4></div>
+                    <div id="viewResults"class="card card-body"></div>
 
+                </section>
+            </article>
         </main>
     </body>
     <footer>
